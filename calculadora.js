@@ -1,20 +1,29 @@
+function calculaImc() {
+    let pesoAtual = parseFloat(document.getElementById("quilos").value);
+    let altura = parseFloat(document.getElementById("metros").value);
 
-function calcularDesconto(){
-    
-//ENTRADADA DE DADOS
-let valorOriginal= document.getElementById("valor").value;
-let desconto =  document.getElementById("desconto").value;
+    if (!pesoAtual || !altura) {
+        alert("Preencha peso e altura corretamente!");
+        return;
+    }
 
+    let imc = pesoAtual / (altura * altura);
+    document.getElementById("imcCalc").textContent = "Seu IMC é: " + imc.toFixed(2);
 
+    let classificacao = "";
+    if (imc < 18.5) {
+        classificacao = "Abaixo do peso";
+    } else if (imc < 25) {
+        classificacao = "Peso normal";
+    } else if (imc < 30) {
+        classificacao = "Sobrepeso";
+    } else if (imc < 35) {
+        classificacao = "Obesidade grau I";
+    } else if (imc < 40) {
+        classificacao = "Obesidade grau II";
+    } else {
+        classificacao = "Obesidade grau III";
+    }
 
-//PROCESAEMENTO
-let valorDesconto = (valorOriginal * desconto) / 100;
-let valorFinal = valorOriginal - valorDesconto;
-
-
-
-//SAIDA
-document.getElementById("resultado").textContent = "valor final:" + valorFinal;
-
+    document.getElementById("classeImc").textContent = classificacao;
 }
-
