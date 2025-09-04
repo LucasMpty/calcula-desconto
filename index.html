@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="calculadora.js"></script>
+    <title>Calcula IMC</title>
+    <script src="calcula.js"></script>
 </head>
 <body>
-    <label for="valor">Valor Original($):</label>
-    <input type="number" id="valor">
+    <label for="peso">Peso Atual (Kg)</label>
+    <input type="number" id="quilos">
 
-    <label for="desconto">Desconto(%):</label>
-    <input type="number" id="desconto">
+    <label for="">Altura (M)</label>
+    <input type="number" id="metros">
 
-     <p id="resultado"></p>
- 
-    <button onclick="calcularDesconto()">Calcular</button>
+    <p id="imcCalc"></p>
+    <p id="classeImc"></p>
 
-      
+    <button onclick="calculaImc()">Calcular</button>
+
+    
 </body>
 </html>
